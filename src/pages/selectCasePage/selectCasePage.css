@@ -1,0 +1,60 @@
+@media only screen and (max-width: 640px) {
+    #selectCasePage {
+        background-color: #E8752B;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #selectCasePage .marginContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin: 1.63rem;
+
+    }
+
+    #selectCasePage h1 {
+        font-size: 3rem;
+        color: white;
+        color: #FFF;
+        text-align: center;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        width: 22rem;
+
+        margin-bottom: 20%;
+    }
+
+    #selectCasePage #casesContainer {
+        width: 100%;
+        height: 26rem;
+        background-color: #FFFFFF;
+        border-radius: 1.38rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #selectCasePage #casesContainer h3 {
+        margin-bottom: 0.75rem;
+    }
+
+    #selectCasePage #casesContainer .caseImageContainer {
+        width: 88%;
+        height: 80%;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    #selectCasePage #casesContainer .caseImageContainer img {
+        height: 100%;
+    }
+}

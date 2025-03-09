@@ -1,0 +1,51 @@
+@media only screen and (max-width: 640px) {
+    #landingPage {
+        background-color: #FE4F18;
+        overflow: hidden;
+    }
+
+    #landingPageTitle {
+        width: 16.13rem;
+        height: 8.56rem;
+        z-index: 1;
+        margin-bottom: 3.69rem;
+    }
+
+    #landingPageTitle img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #landingPageGraphicElements {
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #landingPageGraphicElements img {
+        height: 100%;
+        width: 100%;
+    }
+
+    #playButtonLandingPage {
+        width: 6.75rem;
+        height: 2.88rem;
+        background-color: #FFFFFF;
+        z-index: 1;
+        border-radius: 1rem;
+        border: none;
+    }
+
+    #playButtonLandingPage p {
+        font-size: 1rem;
+        color: #232323;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}
