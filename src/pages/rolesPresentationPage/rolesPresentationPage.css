@@ -1,0 +1,143 @@
+@media only screen and (max-width: 640px) {
+
+    #rolesPresentationPage {
+        background-color: #FE4F18;
+    }
+
+    #rolesPresentationfirstLayer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 11.25rem;
+        z-index: 5;
+    }
+
+    #rolesPresentationfirstLayer .fondo {
+        width: 100%;
+    }
+
+    #rolesPresentationSecondLayer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 59.94rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        z-index: 4;
+    }
+
+    #rolesPresentationSecondLayer .fondo {
+        width: 100%;
+    }
+
+    #rolesPresentationThirdLayer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        z-index: 3;
+    }
+
+    #rolesPresentationThirdLayer .fondo {
+        width: 100%;
+    }
+
+    #rolesPresentationPageContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 6;
+        margin-top: 2rem;
+
+        width: 100%;
+        height: 100vh;
+    }
+
+    #rolesPresentationPageContent h1 {
+        font-size: 2.88rem;
+        color: #FFF;
+        text-align: center;
+        font-family: Verve;
+        font-size: 46.445px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        text-align: right;
+        width: 55%;
+        line-height: 3rem;
+
+        margin-bottom: 1.88rem;
+    }
+
+    .roleContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .roleContainer h2 {
+        font-size: 2.81rem;
+        color: #FFF;
+        font-family: "Plus Jakarta Sans";
+        font-style: italic;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: -0.495px;
+    }
+
+    .roleContainer p {
+        font-size: 1rem;
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        width: 17rem;
+    }
+
+    #judgeRoleContainer {
+        align-items: left;
+        text-align: left;
+    }
+
+    #prosecutorRoleContainer {
+        align-items: flex-end;
+        text-align: right;
+        margin-top: 11.63rem;
+    }
+
+    #rolesPresentationNextButtonContainer {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    #rolesPresentationNextButton {
+        width: 8.75rem;
+        height: 2.88rem;
+        background-color: #FE4F18;
+        border-radius: 1rem;
+        border: none;
+
+        font-size: 1rem;
+        color: #FFF;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        margin-top: 5.94rem;
+    }
+}

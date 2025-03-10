@@ -7,12 +7,13 @@ export const NavigationHook = () => {
     const goToLandingPage = () => { navigate(pagesNames.landingPage) }
     const goToIntroPage = () => { navigate(pagesNames.introPage) }
     const goToCasePage = () => { navigate(pagesNames.selectCasePage) }
-    const goToDistributeTurnsPage = () => { navigate(pagesNames.distributeTurnsPage) }
+    const goToRolesPresentationPage = () => { navigate(pagesNames.rolesPresentationPage) }
+    const goToTeamsPresentationPage = () => { navigate(pagesNames.teamsPresentationPage) }
     const goToGamePage = () => { navigate(pagesNames.gamePage) }
     const goToVeredictPage = () => { navigate(pagesNames.veredictPage) }
     const goToEvidencePage = () => { navigate(pagesNames.evidencePage) }
     const goToTestimoniesPage = () => { navigate(pagesNames.testimoniesPage) }
     const goToEndGamePage = () => { navigate(pagesNames.endGamePage) }
 
-    return { goToLandingPage, goToIntroPage, goToCasePage, goToDistributeTurnsPage, goToGamePage, goToVeredictPage, goToEvidencePage, goToTestimoniesPage, goToEndGamePage }
+    return { goToLandingPage, goToIntroPage, goToCasePage, goToRolesPresentationPage, goToTeamsPresentationPage, goToGamePage, goToVeredictPage, goToEvidencePage, goToTestimoniesPage, goToEndGamePage }
 }

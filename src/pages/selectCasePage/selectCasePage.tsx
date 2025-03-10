@@ -3,8 +3,11 @@ import "./selectCasePage.css"
 import case1Image from "../../assets/jpg/case1_image.jpg"
 import leftArrow from "../../assets/svg/arrow_left_icon.svg"
 import rightArrow from "../../assets/svg/arrow_right_icon.svg"
+import { NavigationHook } from "../../hooks/navigationHook"
 
 export const SelectCasePage = () => {
+    const navigationHook = NavigationHook();
+
     return <>
         <section className="page" id="selectCasePage">
             <div id="selectCasePageBackground">
@@ -31,7 +34,7 @@ export const SelectCasePage = () => {
                     </div>
                 </div>
 
-                <button id="selectCaseNextButton">
+                <button id="selectCaseNextButton" onClick={navigationHook.goToRolesPresentationPage}>
                     Siguiente
                 </button>
             </div>
