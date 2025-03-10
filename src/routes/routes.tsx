@@ -5,6 +5,7 @@ import { SelectCasePage } from "../pages/selectCasePage/selectCasePage";
 import { GamePage } from "../pages/gamePage/gamePage";
 import { IntroPage } from "../pages/introPage/introPage";
 import { RolesPresentationPage } from "../pages/rolesPresentationPage/rolesPresentationPage";
+import { TeamsPresentationPage } from "../pages/teamsPresentationPage/teamsPresentationPage";
 
 
 
@@ -24,6 +25,10 @@ export const routes = [
     {
         path: pagesNames.rolesPresentationPage,
         element: <RolesPresentationPage></RolesPresentationPage>,
+    },
+    {
+        path: pagesNames.teamsPresentationPage,
+        element: <TeamsPresentationPage></TeamsPresentationPage>
     },
     {
         path: pagesNames.gamePage,

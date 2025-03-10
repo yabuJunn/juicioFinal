@@ -1,10 +1,14 @@
 import "./rolesPresentationPage.css"
 
+import { NavigationHook } from "../../hooks/navigationHook"
+
 import rolesPresentationfirstLayerImage from "../../assets/svg/rolesPresentation_whiteLayer.svg"
 import rolesPresentationSecondLayerImage from "../../assets/svg/rolesPresentation_blackLayer.svg"
 import rolesPresentationThirdLayer from "../../assets/svg/rolesPresentation_orangeLayer.svg"
 
 export const RolesPresentationPage = () => {
+    const navigationHook = NavigationHook();
+
     return <>
         <section className="page" id="rolesPresentationPage">
 
@@ -34,7 +38,7 @@ export const RolesPresentationPage = () => {
                 </div>
 
                 <div id="rolesPresentationNextButtonContainer">
-                    <button id="rolesPresentationNextButton">
+                    <button id="rolesPresentationNextButton" onClick={navigationHook.goToTeamsPresentationPage}>
                         Siguiente
                     </button>
                 </div>
