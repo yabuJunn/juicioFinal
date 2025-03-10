@@ -6,6 +6,7 @@ import { GamePage } from "../pages/gamePage/gamePage";
 import { IntroPage } from "../pages/introPage/introPage";
 import { RolesPresentationPage } from "../pages/rolesPresentationPage/rolesPresentationPage";
 import { TeamsPresentationPage } from "../pages/teamsPresentationPage/teamsPresentationPage";
+import { LetsBeginPage } from "../pages/letsBeginPage/letsBeginPage";
 
 
 
@@ -31,8 +32,12 @@ export const routes = [
         element: <TeamsPresentationPage></TeamsPresentationPage>
     },
     {
+        path: pagesNames.letsBeginPage,
+        element: <LetsBeginPage></LetsBeginPage>,
+    },
+    {
         path: pagesNames.gamePage,
         element: <GamePage></GamePage>,
     },
-    
+
 ]
