@@ -1,0 +1,144 @@
+@media only screen and (max-width: 640px) {
+    #intervenePageBackground {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -3;
+    }
+
+    #intervenePageBackground img {
+        width: 100%;
+    }
+
+    #intervenePageContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #intervenePageTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+
+        margin-top: 2rem;
+        margin-left: 2rem;
+    }
+
+    #intervenePageTitle h1 {
+        font-size: 1.56rem;
+        color: #FFF;
+        font-family: Montserrat;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 100%;
+        width: 50%;
+        margin-left: 3rem;
+    }
+
+    /* Judge Intervention */
+
+    #judgeInterventionContainer {
+        width: 12.19rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        margin-left: 2rem;
+        margin-top: 5.13rem;
+    }
+
+    #judgeInterventionContainer h2 {
+        font-size: 2.81rem;
+        color: #FFF;
+        font-family: "Plus Jakarta Sans";
+        font-style: italic;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: -0.495px;
+    }
+
+    #judgeInterventionContainer p {
+        font-size: 1rem;
+        color: #F1F1F1;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: -0.176px;
+    }
+
+    #judgeInterventionContainer button {
+        width: 8.81rem;
+        height: 2.88rem;
+        border-radius: 1rem;
+        background-color: #FFFFFF;
+
+        font-size: 1rem;
+        color: #232323;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        margin-top: 1.63rem;
+        border: none;
+    }
+
+    /* Intervencion Fiscal */
+
+    #prosecutorInterventionContainer {
+        width: 17.69rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        margin-left: 6.6rem;
+        margin-top: 13.31rem;
+    }
+
+    #prosecutorInterventionContainer h2 {
+        font-size: 2.81rem;
+        color: #FFF;
+        font-family: "Plus Jakarta Sans";
+        font-style: italic;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: -0.495px;
+    }
+
+    #prosecutorInterventionContainer p {
+        font-size: 1rem;
+        color: #F1F1F1;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: -0.176px;
+        text-align: right;
+    }
+
+    #prosecutorInterventionContainer button {
+        width: 8.38rem;
+        height: 2.88rem;
+        border-radius: 1rem;
+        background-color: #FE4F18;
+
+        font-size: 1rem;
+        color: #FFFFFF;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        margin-top: 1.63rem;
+        border: none;
+    }
+}

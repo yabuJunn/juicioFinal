@@ -6,6 +6,7 @@ export enum pagesNames {
     teamsPresentationPage = '/TeamsPresentationPage',
     letsBeginPage = '/LetsBeginPage',
     gamePage = '/GamePage',
+    intervenePage = '/IntervenePage',
     veredictPage = '/VeredictPage',
     evidencePage = '/EvidencePage',
     testimoniesPage = '/TestimoniesPage',
