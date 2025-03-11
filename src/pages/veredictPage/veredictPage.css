@@ -1,0 +1,109 @@
+@media only screen and (max-width: 640px) {
+    #veredictPageBackground {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: -3;
+    }
+
+    #veredictPageBackground img {
+        width: 100%;
+    }
+
+    #veredictPageContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: 100%;
+        height: 100vh;
+    }
+
+    #veredictPageTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 100%;
+        margin: 2rem 0 0 2rem;
+    }
+
+    #veredictPageTitle img {
+        width: 2.13rem;
+        height: 2.13rem;
+        margin-right: 1.88rem;
+    }
+
+    #veredictPageTitle h1 {
+        font-size: 1.56rem;
+        color: #FFF;
+        font-family: Montserrat;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 100%;
+
+        width: 12.75rem;
+    }
+
+    #veredictPageDescription {
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 1.07rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: -0.176px;
+
+        margin: 3rem 2rem 0 2rem;
+    }
+
+    /* Winner Buttons */
+
+    #winnerSelectorContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 2.88rem;
+    }
+
+    #winnerSelectorContainer button {
+        width: 9.63rem;
+        height: 16.63rem;
+        border-radius: 1rem;
+        border: none;
+
+        background-color: #FFF;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #winnerSelectorContainer button:last-child {
+        margin-left: 2rem;
+    }
+
+    #winnerSelectorContainer button img {
+        height: 11.31rem;
+    }
+
+    #winnerSelectorContainer button p {
+        font-size: 1.25rem;
+        color: #292D32;
+        font-family: "Plus Jakarta Sans";
+        font-style: italic;
+        font-weight: 700;
+        line-height: 150%;
+        /* 30.413px */
+        letter-spacing: -0.223px;
+
+        margin-top: 0.5rem;
+    }
+}

@@ -22,7 +22,7 @@ export const IntervenePage = () => {
                 <div id="judgeInterventionContainer">
                     <h2>Juez</h2>
                     <p>Ya tienes el veredicto. <strong>¡Ciérralo aquí!</strong></p>
-                    <button onClick={() => { }}>Veredicto</button>
+                    <button onClick={navigationHook.goToVeredictPage}>Veredicto</button>
                 </div>
 
                 <div id="prosecutorInterventionContainer">
