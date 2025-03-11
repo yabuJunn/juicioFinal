@@ -2,43 +2,82 @@ import { useState } from "react";
 import "./gamePage.css"
 import { NavigationHook } from "../../hooks/navigationHook";
 
+import gamePageBackground from "../../assets/jpg/fondo_gamePage.jpg"
+
 export const GamePage = () => {
     const navigationHook = NavigationHook();
-    const caseName = "Caso de prueba";
+
+    const caseName = "El Ministerio de la mansión centenaria";
 
     const [turnNumber, setTurnNumber] = useState<number>(0);
     const [groupTurn, setGroupTurn] = useState<number>(0);
 
     return <>
-        <section className="page" id="landingPage">
-            <h1>{caseName}</h1>
-            <h2>El Juicio Final</h2>
-
-            <div id="turnIndicatorContainer">
-                <h3>Turno de: </h3>
-                <p>Puntos: 0</p>
-
-                <p>{turnNumber}</p>
+        <section className="page" id="gamePage">
+            <div id="gamePageBackground">
+                <img src={gamePageBackground} alt="" />
             </div>
 
-            <div id="gameButtonsContainer">
-                <button onClick={navigationHook.goToEvidencePage}>Evidencia</button>
-                <div id="gameSecondaryButtonsContainer">
-                    <button onClick={navigationHook.goToTestimoniesPage}>Testimonios</button>
-                    <button onClick={navigationHook.goToVeredictPage}>Veredicto</button>
+            <div id="gamePageContent">
+                <h1>{caseName}</h1>
+
+                <div id="gamePageNextTurnContainer">
+                    <div id="gamePageNextTurnContent">
+                        <p>Un grupo ha llegado a los <strong>20 puntos</strong></p>
+                        <button id="gamePageBuyJudgeButton" onClick={() => { }}>
+                            Comprar Juez
+                        </button>
+
+                        <button id="gamePageNextTurnButton" onClick={() => { setTurnNumber(turnNumber + 1) }}>
+                            Pasar turno
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <div id="changeTurnContainer">
-                <p onClick={() => {
-                    if (groupTurn === 1) {
-                        setTurnNumber(turnNumber + 1);
-                        setGroupTurn(0);
-                    }
-                    else {
-                        setGroupTurn(1);
-                    }
-                }}>Siguiente Turno</p>
+                <div id="gamePageButtonsContainer">
+
+                    <div id="turnIndicatorContainer">
+                        <div id="turnIndicatorBackground">
+                            <p>Turno: 5</p>
+                        </div>
+
+                        <div id="turnIndicatorGroups">
+                            <button className="turnIndicatorGroup">
+                                A
+                            </button>
+
+                            <div id="turnIndicatorNumber">
+                                <p>2<b> : </b>3</p>
+                                <p>Puntos</p>
+                            </div>
+
+                            <button className="turnIndicatorGroup">
+                                B
+                            </button>
+                        </div>
+
+                        <button id="givePointsButton" onClick={() => { }}>
+                            Dar puntos
+                        </button>
+                    </div>
+
+                    <div id="gamePageNavigationButtons">
+                        <div id="gamePageNavigationButtonsSuperior">
+                            <button id="gamePageWitnessesButton" onClick={() => { navigationHook.goToWitnessesPage() }}>
+                                Testigos
+                            </button>
+
+                            <button id="gamePageEvidencesButton" onClick={() => { navigationHook.goToEvidencePage() }}>
+                                Pruebas
+                            </button>
+                        </div>
+
+                        <button id="gamePageInterveneButton" onClick={() => { navigationHook.goToIntervenePage() }}>
+                            Intervenir
+                        </button>
+                    </div>
+
+                </div>
             </div>
         </section>
     </>

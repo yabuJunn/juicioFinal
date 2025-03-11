@@ -1,0 +1,288 @@
+@media only screen and (max-width: 640px) {
+    #gamePageBackground {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -3;
+    }
+
+    #gamePageBackground img {
+        width: 100%;
+    }
+
+    #gamePageContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #gamePageContent h1 {
+        font-size: 2.5rem;
+        color: #FFF;
+        text-align: center;
+        font-family: Verve;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -1.393px;
+        margin-top: 2rem;
+        width: 90%;
+    }
+
+    #gamePageContent #gamePageNextTurnContainer {
+        margin-top: 7.19rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #gamePageNextTurnContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 12.19rem;
+        margin-right: 2rem;
+    }
+
+    #gamePageNextTurnContent p {
+        text-align: right;
+        color: #F1F1F1;
+        text-align: right;
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: -0.176px;
+
+        margin-bottom: 2.19rem;
+    }
+
+    #gamePageBuyJudgeButton {
+        background: #FE4F18;
+        border-radius: 1.25rem;
+        width: 10rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 1rem;
+        background-color: #FE4F18;
+        border-radius: 1.25rem;
+
+        color: #FFFFFF;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+
+        margin-bottom: 1.19rem;
+    }
+
+    #gamePageNextTurnButton {
+        background: #FFF;
+        border-radius: 1.25rem;
+        width: 10rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 1rem;
+        background-color: #FFFFFF;
+        border-radius: 1.25rem;
+
+        color: #232323;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    #gamePageButtonsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.4rem;
+
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 28.38rem;
+
+        border-radius: 1.94rem 1.94rem 0rem 0rem;
+    }
+
+    /* Indicador de Puntaje */
+
+    #turnIndicatorBackground {
+        width: 9.50rem;
+        height: 2.4rem;
+        border-radius: 1.7rem 1.7rem 0 0;
+        background-color: #FE4F18;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 1em;
+        color: #FFF;
+        text-align: center;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+    }
+
+    #turnIndicatorContainer {
+        width: 15.38rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #turnIndicatorGroups {
+        width: 15.38rem;
+        height: 4.75rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        border: 0.721px solid #FE4F18;
+        border-radius: 2.88rem;
+    }
+
+    #turnIndicatorGroups button {
+        width: 4.06rem;
+        height: 4.06rem;
+        border-radius: 2.25rem;
+        border: 1px solid #2C2C2C;
+        background: none;
+
+        color: #2C2C2C;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 2.06rem;
+        font-style: italic;
+        font-weight: 800;
+        line-height: 100%;
+        margin: 0.35rem;
+    }
+
+    #turnIndicatorNumber {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #turnIndicatorNumber p:first-child {
+        font-size: 1.75rem;
+        color: #000;
+        text-align: center;
+        font-family: Montserrat;
+        font-style: italic;
+        font-weight: 800;
+        line-height: 100%;
+    }
+
+    #turnIndicatorNumber p b {
+        color: #FE4F18;
+    }
+
+    #turnIndicatorNumber p:last-child {
+        color: #222506;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+
+        margin-top: 0.45rem;
+    }
+
+    #givePointsButton {
+        width: 7.5rem;
+        height: 2.38rem;
+        border-radius: 1rem;
+        background-color: #2C2C2C;
+
+        margin-top: 0.7rem;
+
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    /* Botones de Navegacion */
+
+    #gamePageNavigationButtons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #gamePageNavigationButtons button {
+        width: 21.31rem;
+        height: 2.88rem;
+        border-radius: 1rem;
+
+        font-size: 1rem;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    #gamePageNavigationButtonsSuperior {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 1.5rem;
+        margin-bottom: 1.69rem;
+    }
+
+    #gamePageNavigationButtonsSuperior button {
+        width: 9.75rem;
+    }
+
+    #gamePageWitnessesButton {
+        margin-right: 0.902rem;
+        color: #222506;
+        border: 1px solid #222506;
+        background: none;
+    }
+
+    #gamePageEvidencesButton {
+        margin-left: 0.902rem;
+        color: #FFF;
+        border: 1px solid #FE4F18;
+        background: #FE4F18;
+    }
+
+    #gamePageInterveneButton {
+        border: 1px solid #FE4F18;
+        color: #FE4F18;
+        background: none;
+    }
+
+}
