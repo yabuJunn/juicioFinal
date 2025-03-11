@@ -9,6 +9,7 @@ export enum pagesNames {
     intervenePage = '/IntervenePage',
     capturePage = '/CapturePage',
     veredictPage = '/VeredictPage',
+    winnerPage = '/WinnerPage',
     evidencePage = '/EvidencePage',
     testimoniesPage = '/TestimoniesPage',
     endGamePage = '/EndGamePage',

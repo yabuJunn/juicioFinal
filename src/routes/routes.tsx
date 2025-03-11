@@ -10,6 +10,7 @@ import { LetsBeginPage } from "../pages/letsBeginPage/letsBeginPage";
 import { IntervenePage } from "../pages/intervenePage/intervenePage";
 import { CapturePage } from "../pages/capturePage/capturePage";
 import { VeredictPage } from "../pages/veredictPage/veredictPage";
+import { WinnerPage } from "../pages/winnerPage/winnerPage";
 
 
 
@@ -53,6 +54,10 @@ export const routes = [
     {
         path:  pagesNames.veredictPage,
         element: <VeredictPage></VeredictPage>
+    },
+    {
+        path: pagesNames.winnerPage,
+        element: <WinnerPage></WinnerPage>
     }
 
 ]
