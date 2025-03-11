@@ -11,10 +11,12 @@ export const NavigationHook = () => {
     const goToTeamsPresentationPage = () => { navigate(pagesNames.teamsPresentationPage) }
     const gotToLetsBeginPage = () => { navigate(pagesNames.letsBeginPage) }
     const goToGamePage = () => { navigate(pagesNames.gamePage) }
+    const gotToIntervenePage = () => { navigate(pagesNames.intervenePage) }
+    const goToCapturePage = () => { navigate(pagesNames.capturePage) }
     const goToVeredictPage = () => { navigate(pagesNames.veredictPage) }
     const goToEvidencePage = () => { navigate(pagesNames.evidencePage) }
     const goToTestimoniesPage = () => { navigate(pagesNames.testimoniesPage) }
     const goToEndGamePage = () => { navigate(pagesNames.endGamePage) }
 
-    return { goToLandingPage, goToIntroPage, goToCasePage, goToRolesPresentationPage, goToTeamsPresentationPage, gotToLetsBeginPage, goToGamePage, goToVeredictPage, goToEvidencePage, goToTestimoniesPage, goToEndGamePage }
+    return { goToLandingPage, goToIntroPage, goToCasePage, goToRolesPresentationPage, goToTeamsPresentationPage, gotToLetsBeginPage, goToGamePage, gotToIntervenePage, goToVeredictPage, goToCapturePage, goToEvidencePage, goToTestimoniesPage, goToEndGamePage }
 }

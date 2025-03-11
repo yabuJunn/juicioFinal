@@ -8,6 +8,7 @@ import { RolesPresentationPage } from "../pages/rolesPresentationPage/rolesPrese
 import { TeamsPresentationPage } from "../pages/teamsPresentationPage/teamsPresentationPage";
 import { LetsBeginPage } from "../pages/letsBeginPage/letsBeginPage";
 import { IntervenePage } from "../pages/intervenePage/intervenePage";
+import { CapturePage } from "../pages/capturePage/capturePage";
 
 
 
@@ -44,5 +45,9 @@ export const routes = [
         path: pagesNames.intervenePage,
         element: <IntervenePage></IntervenePage>,
     },
+    {
+        path: pagesNames.capturePage,
+        element: <CapturePage></CapturePage>
+    }
 
 ]
