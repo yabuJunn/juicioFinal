@@ -14,7 +14,7 @@ export const TestimoniesPage = () => {
     return <>
         <section className="page" id="testimoniesPage">
 
-            <div id="testimoniesPageModalQuestions">
+            {/* <div id="testimoniesPageModalQuestions" className="displayNone">
                 <div id="testimoniesPageModalQuestionsContent">
                     <img src={closeIconDark} alt="" id="closeIconDark" />
 
@@ -22,7 +22,7 @@ export const TestimoniesPage = () => {
                         <h2><strong>Pregunta 1:</strong> Restos de Pintura en la Ropa del Acusado</h2>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div id="testimoniesPageContent">
 
