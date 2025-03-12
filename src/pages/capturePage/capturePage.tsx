@@ -10,7 +10,7 @@ export const CapturePage = () => {
     return <>
         <section className="page" id="capturePage">
             <div id="capturePageBackground">
-                <img src={capturePageBackground} alt="" />
+                <img src={capturePageBackground} alt="" onClick={navigationHook.goToVeredictPage} />
             </div>
 
             <div id="capturePageContent">

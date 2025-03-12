@@ -19,7 +19,7 @@ export const VeredictPage = () => {
 
             <div id="veredictPageContent">
                 <div id="veredictPageTitle">
-                    <img src={backIcon} alt="" />
+                    <img src={backIcon} alt="" onClick={navigationHook.gotToIntervenePage}/>
                     <h1>
                         Dictar un veredicto final
                     </h1>

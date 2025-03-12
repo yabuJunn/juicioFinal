@@ -22,9 +22,9 @@ export const LetsBeginPage = () => {
             const timeout = setTimeout(() => {
 
                 navigationHook.goToGamePage()
-            }, 1000); // Espera 1 segundo más
+            }, 1000);
 
-            return () => clearTimeout(timeout); // Limpieza del timeout
+            return () => clearTimeout(timeout);
         }
     }, [timer, navigationHook]);
 

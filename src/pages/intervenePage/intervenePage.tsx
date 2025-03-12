@@ -6,7 +6,7 @@ import { NavigationHook } from "../../hooks/navigationHook";
 
 export const IntervenePage = () => {
     const navigationHook = NavigationHook();
-    
+
     return <>
         <section className="page" id="intervenePage">
             <div id="intervenePageBackground">
@@ -15,7 +15,7 @@ export const IntervenePage = () => {
 
             <div id="intervenePageContent">
                 <div id="intervenePageTitle">
-                    <img src={backIcon} alt="" />
+                    <img src={backIcon} alt="" onClick={navigationHook.goToGamePage} />
                     <h1>¿Quién desea intervenir?</h1>
                 </div>
 
