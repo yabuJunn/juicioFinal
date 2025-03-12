@@ -1,9 +1,12 @@
 import "./evidencePage.css"
 
+import { NavigationHook } from "../../hooks/navigationHook"
+
 import evidencePageBackground from "../../assets/jpg/fondoTestimonios.jpg"
 import backIconOrange from "../../assets/svg/arrow_back_orange.svg"
-import { NavigationHook } from "../../hooks/navigationHook"
 import lockIconGray from "../../assets/svg/lockIconGray.svg"
+import closeIconDark from "../../assets/svg/closeIconDark.svg"
+import evidenceLogo from "../../assets/png/evidenceLogo.png"
 
 export const EvidencePage = () => {
     const navigationHook = NavigationHook()
@@ -16,7 +19,19 @@ export const EvidencePage = () => {
 
             <img src={backIconOrange} alt="" className="backIconOrange" onClick={navigationHook.goToGamePage} />
 
+            <div id="modalEvidenceDescriptionContainer">
+                <div id="modalEvidenceDescriptionContent">
+                    <img src={closeIconDark} alt="CloseIconDark" id="closeIcon" />
 
+                    <h3>Titulo Prueba</h3>
+
+                    <img src={evidenceLogo} alt="Imagen Prueba" id="evidenceImage" />
+
+                    <p>El fiscal presenta la acusación, exponiendo los cargos y mostrando la primera evidencia.</p>
+
+                    <button>Presentar Prueba</button>
+                </div>
+            </div>
 
             <div id="evidencePageContent">
                 <h1>Evidencias</h1>
