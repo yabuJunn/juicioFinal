@@ -73,103 +73,10 @@ const witnessData: WitnessDataInterface[] = [
     },
 ];
 
-interface EvidenceInterface {
-    id: string;
-    title: string;
-    description: string;
-    cost: number;
-    unlocked: boolean;
-}
-
-const evidencesGrA: EvidenceInterface[] = [
-    {
-        id: "huellas",
-        title: "Huellas dactilares en el marco vacío",
-        description:
-            "Se encuentran huellas parciales del acusado en el marco donde estaba el retrato, sugiriendo contacto directo.",
-        cost: 0,
-        unlocked: true,
-    },
-    {
-        id: "video",
-        title: "Cámara de seguridad alterada",
-        description:
-            "Una cámara de seguridad muestra al acusado cerca del retrato minutos antes de su desaparición.",
-        cost: 0,
-        unlocked: true,
-    },
-    {
-        id: "sirviente",
-        title: "Testimonio de un sirviente",
-        description:
-            "Un mayordomo afirma haber visto al acusado merodeando con actitud nerviosa.",
-        cost: 3,
-        unlocked: false,
-    },
-    {
-        id: "tela",
-        title: "Restos de tela rasgada en el marco",
-        description:
-            "Fragmentos de tela en el clavo del retrato coinciden con la ropa del acusado.",
-        cost: 5,
-        unlocked: false,
-    },
-    {
-        id: "pintura",
-        title: "Manchas de pintura fresca en las manos del acusado",
-        description:
-            "Pintura reciente encontrada en los dedos del sospechoso, coincidencia directa.",
-        cost: 5,
-        unlocked: false,
-    },
-];
-
-const evidencesGrB: EvidenceInterface[] = [
-    {
-        id: "carta",
-        title: "Carta de chantaje encontrada en la habitación",
-        description:
-            "Una carta anónima amenaza revelar un secreto familiar, sugiriendo distracción.",
-        cost: 0,
-        unlocked: true,
-    },
-    {
-        id: "video",
-        title: "Declaraciones contradictorias de un testigo clave",
-        description:
-            "Un testigo cambia su versión, lo que hace perder credibilidad a su testimonio.",
-        cost: 0,
-        unlocked: true,
-    },
-    {
-        id: "llamada",
-        title: "Registro de llamadas sospechoso",
-        description:
-            "Una llamada justo antes del robo indica posibles conspiraciones.",
-        cost: 3,
-        unlocked: false,
-    },
-    {
-        id: "manipulado",
-        title: "Cámara de seguridad editada",
-        description:
-            "El video de seguridad presenta cortes y manipulaciones, sugiriendo edición.",
-        cost: 5,
-        unlocked: false,
-    },
-    {
-        id: "falsa",
-        title: "Una confesión anónima falsa",
-        description:
-            "Una nota deja entrever venganza familiar, pero la escritura no coincide.",
-        cost: 5,
-        unlocked: false,
-    },
-];
-
 import isadoraImage from "../../assets/png/isadoraImage.png"
 import rickyImage from "../../assets/png/rickyImage.png"
 import camilaImage from "../../assets/png/camilaImage.png"
+import { usePoints } from "../../context/pointsContext"
 
 const characterImages = [
     isadoraImage, // Ruta importada o definida
@@ -177,89 +84,85 @@ const characterImages = [
     camilaImage
 ]
 
-
 export const TestimoniesPage = () => {
     const navigationHook = NavigationHook()
 
     const [witnessIndex, setWitnessIndex] = useState<number>(0)
-    const [evidenceIndex, setEvidenceIndex] = useState<string>("")
-
-    const [groupTurn, setGroupTurn] = useState<number>(0); // 0: Grupo A, 1: Grupo B
-
-    const [evidencesGroupA, setEvidencesGroupA] = useState<Array<evidenceInterface>>(evidencesGrA)
-    const [evidencesGroupB, setEvidencesGroupB] = useState<Array<evidenceInterface>>(evidencesGrB)
+    const [evidenceIndex, setEvidenceIndex] = useState<string | null>(null)
+    const [selectedEvidenceTitle, setSelectedEvidenceTitle] = useState<string>("")
 
     const [showModalPruebas, setShowModalPruebas] = useState<boolean>(false)
     const [showModalRespuesta, setShowModalRespuesta] = useState<boolean>(false)
 
-    const [selectedEvidenceTitle, setSelectedEvidenceTitle] = useState<string>("")
+    const { groupTurn, evidences } = usePoints();
 
     // Función para obtener la respuesta del testigo para la evidencia seleccionada
-    const getWitnessResponse = (witnessIndex: number, evidenceId: string): string => {
-        const responses = witnessData[witnessIndex].evidenceResponses;
-        const responseObj = responses.find((res) => res.id === evidenceId);
+    const getWitnessResponse = (): string => {
+        if (!evidenceIndex) return "Selecciona una prueba primero.";
+        const responseObj = witnessData[witnessIndex].evidenceResponses.find((res) => res.id === evidenceIndex);
         return responseObj ? responseObj.response : "No hay respuesta disponible para esta prueba.";
     };
 
-    return <>
+    return (
         <section className="page" id="testimoniesPage">
+            {/* Modal de selección de pruebas */}
+            {showModalPruebas && (
+                <div id="testimoniesPageModalQuestions">
+                    <div id="testimoniesPageModalQuestionsContent">
+                        <img src={closeIconDark} alt="Cerrar" id="closeIconDark" onClick={() => setShowModalPruebas(false)} />
 
-            <div id="testimoniesPageModalQuestions" className="displayNone" style={{ visibility: showModalPruebas ? "visible" : "hidden" }}>
-                <div id="testimoniesPageModalQuestionsContent">
-                    <img src={closeIconDark} alt="" id="closeIconDark" onClick={() => { setShowModalPruebas(false) }} />
-
-                    <div id="evidencesButtons" >
-                        {
-                            (groupTurn === 0 ? evidencesGroupA : evidencesGroupB).map((evidence) => {
+                        <div id="evidencesButtons">
+                            {(groupTurn === 0 ? evidences.groupA : evidences.groupB).map((evidence) => {
                                 if (evidence.unlocked) {
-                                    return <button className="purchasedEvidence" onClick={() => {
-                                        setShowModalPruebas(false)
-                                        setEvidenceIndex(evidence.id)
-                                        setSelectedEvidenceTitle(evidence.title)
-                                    }}
-                                        key={evidence.title}
-                                    >
-                                        <p>{evidence.title}</p>
-                                    </button>
+                                    return (
+                                        <button
+                                            className="purchasedEvidence"
+                                            onClick={() => {
+                                                setShowModalPruebas(false);
+                                                setEvidenceIndex(evidence.id);
+                                                setSelectedEvidenceTitle(evidence.title);
+                                            }}
+                                            key={evidence.id}
+                                        >
+                                            <p>{evidence.title}</p>
+                                        </button>
+                                    );
                                 }
-                            })
-                        }
+                                return null;
+                            })}
+                        </div>
                     </div>
-
                 </div>
-            </div>
+            )}
 
-            <div id="modalEvidencePurchase" style={{ visibility: showModalRespuesta ? "visible" : "hidden" }}>
-                <div id="modalEvidencePurchaseContent">
-                    <img src={closeIconDark} alt="CloseIconDark" id="closeIcon" onClick={() => { setShowModalRespuesta(false) }} />
-
-                    <p>{getWitnessResponse(witnessIndex, evidenceIndex)}</p>
-
+            {/* Modal de respuesta del testigo */}
+            {showModalRespuesta && (
+                <div id="modalEvidencePurchase">
+                    <div id="modalEvidencePurchaseContent">
+                        <img src={closeIconDark} alt="Cerrar" id="closeIcon" onClick={() => setShowModalRespuesta(false)} />
+                        <p>{getWitnessResponse()}</p>
+                    </div>
                 </div>
-            </div>
-
-            <div id="">
-
-            </div>
+            )}
 
             <div id="testimoniesPageContent">
-
-                <img src={backIconOrange} alt="" className="backIconOrange" onClick={navigationHook.goToGamePage} />
-
+                <img src={backIconOrange} alt="Volver" className="backIconOrange" onClick={navigationHook.goToGamePage} />
                 <h1>Testigos</h1>
 
                 <div id="testimoniesSubjectImage">
                     <img src={characterImages[witnessIndex]} alt="" />
-
                     <div id="testimoniesChangeArrowsContainer">
-                        <img src={leftArrow} alt=""
-                            onClick={() => setWitnessIndex((prev) => prev === 0 ? witnessData.length - 1 : prev - 1)}
+                        <img
+                            src={leftArrow}
+                            alt="Izquierda"
+                            onClick={() => setWitnessIndex((prev) => (prev === 0 ? witnessData.length - 1 : prev - 1))}
                         />
-                        <img src={rightArrow} alt=""
-                            onClick={() => setWitnessIndex((prev) => prev === witnessData.length - 1 ? 0 : prev + 1)}
+                        <img
+                            src={rightArrow}
+                            alt="Derecha"
+                            onClick={() => setWitnessIndex((prev) => (prev === witnessData.length - 1 ? 0 : prev + 1))}
                         />
                     </div>
-
                 </div>
 
                 <div id="characterInfo">
@@ -267,15 +170,15 @@ export const TestimoniesPage = () => {
                     <p id="testimoniesPageDescription">{witnessData[witnessIndex].description}</p>
                 </div>
 
-                <p id="tituloPrueba">{selectedEvidenceTitle}</p>
+                <p id="tituloPrueba">{selectedEvidenceTitle || "Selecciona una prueba"}</p>
 
                 <div id="subjectControlButtons">
-                    <button onClick={() => { setShowModalRespuesta(true) }}>Pregunta</button>
-
-                    <button onClick={() => { setShowModalPruebas(true) }}>Pruebas</button>
+                    <button onClick={() => evidenceIndex && setShowModalRespuesta(true)} disabled={!evidenceIndex}>
+                        Pregunta
+                    </button>
+                    <button onClick={() => setShowModalPruebas(true)}>Pruebas</button>
                 </div>
-
             </div>
-        </section >
-    </>
-}
+        </section>
+    );
+};

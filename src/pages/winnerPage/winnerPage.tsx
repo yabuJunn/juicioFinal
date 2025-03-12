@@ -1,13 +1,12 @@
 import "./winnerPage.css"
 
 import winnerPageBackground from "../../assets/jpg/fondo_ganadorPage.jpg"
-import winnerImage from "../../assets/png/ImagenGanadorPrueba.svg"
 
 import groupAImage from "../../assets/png/grupoA.png"
-import groupBImage from "../../assets/png/grupoB.png"
+import { usePoints } from "../../context/pointsContext";
 
 export const WinnerPage = () => {
-    const winner = "Paladines"
+    const { winner } = usePoints();
 
     return <>
         <section className="page" id="winnerPage">

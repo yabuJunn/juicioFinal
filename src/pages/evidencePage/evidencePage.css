@@ -119,6 +119,12 @@
         background: rgba(0, 0, 0, 0.52);
     }
 
+    #modalEvidenceDescriptionContent #closeIconDark {
+        position: absolute;
+        top: 16rem;
+        right: 4rem;
+    }
+
     #modalEvidenceDescriptionContent {
         width: 21.31rem;
         height: 28.63rem;

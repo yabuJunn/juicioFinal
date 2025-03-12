@@ -2,27 +2,18 @@ import "./gamePage.css";
 
 import { useState } from "react";
 import { NavigationHook } from "../../hooks/navigationHook";
+import { usePoints } from "../../context/pointsContext";
 
 import gamePageBackground from "../../assets/jpg/fondo_gamePage.jpg";
-
-interface pointsInterface {
-    groupA: number,
-    groupB: number
-}
 
 export const GamePage = () => {
     const navigationHook = NavigationHook();
 
     const caseName = "El Misterio de la mansión centenaria";
+    const { points, updatePoints, groupTurn, setGroupTurn, turnNumber, setTurnNumber, givedPoints, setGivedPoints } = usePoints();
 
-    const [turnNumber, setTurnNumber] = useState<number>(1);
-    const [groupTurn, setGroupTurn] = useState<number>(0); // 0: Grupo A, 1: Grupo B
+    //const [groupTurn, setGroupTurn] = useState<number>(0); // 0: Grupo A, 1: Grupo B
     const [groupButtonSelected, setGroupButtonSelected] = useState<number>(0); // 0: ninguno, 1: A, 2: B
-    const [points, setPoints] = useState<pointsInterface>({
-        groupA: 0,
-        groupB: 0
-    })
-    const [givedPoints, setGivedPoints] = useState<number>(1) // 0: No los ha dado, 1: Ya los dio
 
     if (turnNumber > 5) {
         navigationHook.goToVeredictPage()
@@ -49,7 +40,13 @@ export const GamePage = () => {
                             style={{ visibility: showJudgeSection ? "visible" : "hidden" }}
                         >
                             <p>Un grupo ha llegado a los <strong>20 puntos</strong></p>
-                            <button id="gamePageBuyJudgeButton" onClick={() => { }}>
+                            <button id="gamePageBuyJudgeButton" onClick={() => {
+                                if (groupTurn === 0) {
+                                    updatePoints("A", -20)
+                                } else if (groupTurn === 2) {
+                                    updatePoints("B", -20)
+                                }
+                            }}>
                                 Comprar Juez
                             </button>
                         </div>
@@ -63,6 +60,7 @@ export const GamePage = () => {
                                     setTurnNumber((prev) => prev + 1);
                                     setGroupButtonSelected(0);
                                     setGroupTurn(0);
+                                    setGivedPoints(1)
                                 }
                             }}
                         >
@@ -110,18 +108,12 @@ export const GamePage = () => {
                                 if (givedPoints === 0) {
                                     if (groupTurn === 1) {
                                         if (groupButtonSelected === 1) {
-                                            setPoints(prev => ({
-                                                groupA: prev.groupA + 5,
-                                                groupB: prev.groupB
-                                            }));
+                                            updatePoints("A", 5);
                                             setGivedPoints(1);
                                             setGroupButtonSelected(0)
                                         }
                                         if (groupButtonSelected === 2) {
-                                            setPoints(prev => ({
-                                                groupA: prev.groupA,
-                                                groupB: prev.groupB + 5
-                                            }));
+                                            updatePoints("B", 5);
                                             setGivedPoints(1);
                                             setGroupButtonSelected(0)
                                         }
