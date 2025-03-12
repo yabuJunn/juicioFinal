@@ -4,14 +4,28 @@ import { NavigationHook } from "../../hooks/navigationHook";
 
 import gamePageBackground from "../../assets/jpg/fondo_gamePage.jpg";
 
+interface pointsInterface {
+    groupA: number,
+    groupB: number
+}
+
 export const GamePage = () => {
     const navigationHook = NavigationHook();
 
     const caseName = "El Ministerio de la mansión centenaria";
 
     const [turnNumber, setTurnNumber] = useState<number>(0);
-    const [groupTurn, setGroupTurn] = useState<number>(0);
+    const [groupTurn, setGroupTurn] = useState<number>(0); // 0: Grupo A, 1: Grupo B
     const [groupButtonSelected, setGroupButtonSelected] = useState<number>(0); // 0: ninguno, 1: A, 2: B
+    const [points, setPoints] = useState<pointsInterface>({
+        groupA: 0,
+        groupB: 0
+    })
+    const [givedPoints, setGivedPoints] = useState<number>(0) // 0: No los ha dado, 1: Ya los dio
+
+    if (turnNumber > 5) {
+        navigationHook.goToVeredictPage()
+    }
 
     return (
         <section className="page" id="gamePage">
@@ -32,9 +46,13 @@ export const GamePage = () => {
                         <button
                             id="gamePageNextTurnButton"
                             onClick={() => {
-                                setTurnNumber((prev) => prev + 1);
-                                setGroupTurn((prev) => prev + 1);
-                                setGroupButtonSelected(0);
+                                if (groupTurn === 0) {
+                                    setGroupTurn(1);
+                                } else if (groupTurn === 1) {
+                                    setTurnNumber((prev) => prev + 1);
+                                    setGroupButtonSelected(0);
+                                    setGroupTurn(0);
+                                }
                             }}
                         >
                             Pasar turno
@@ -46,7 +64,7 @@ export const GamePage = () => {
                 <div id="gamePageButtonsContainer">
                     <div id="turnIndicatorContainer">
                         <div id="turnIndicatorBackground">
-                            <p>Turno: {turnNumber}</p>
+                            <p>Turno: {turnNumber} Grupo {groupTurn === 0 ? "A" : "B"}</p>
                         </div>
 
                         <div id="turnIndicatorGroups">
@@ -60,7 +78,7 @@ export const GamePage = () => {
 
                             {/* PUNTOS */}
                             <div id="turnIndicatorNumber">
-                                <p>2<b> : </b>3</p>
+                                <p>{points.groupA}<b> : </b>{points.groupB}</p>
                                 <p>Puntos</p>
                             </div>
 
@@ -74,7 +92,29 @@ export const GamePage = () => {
                         </div>
 
                         {/* DAR PUNTOS */}
-                        <button id="givePointsButton" onClick={() => { }}>
+                        <button id="givePointsButton" onClick={() => {
+                            if (givedPoints === 0) {
+                                if (groupTurn === 1) {
+                                    if (groupButtonSelected === 1) {
+                                        setPoints(prev => {
+                                            return {
+                                                groupA: prev.groupA + 5,
+                                                groupB: prev.groupB
+                                            }
+                                        })
+                                    }
+
+                                    if (groupButtonSelected === 2) {
+                                        setPoints(prev => {
+                                            return {
+                                                groupA: prev.groupA,
+                                                groupB: prev.groupB + 5
+                                            }
+                                        })
+                                    }
+                                }
+                            }
+                        }}>
                             Dar puntos
                         </button>
                     </div>
