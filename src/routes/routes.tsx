@@ -11,6 +11,7 @@ import { IntervenePage } from "../pages/intervenePage/intervenePage";
 import { CapturePage } from "../pages/capturePage/capturePage";
 import { VeredictPage } from "../pages/veredictPage/veredictPage";
 import { WinnerPage } from "../pages/winnerPage/winnerPage";
+import { TestimoniesPage } from "../pages/testimoniesPage/testimoniesPage";
 
 
 
@@ -52,12 +53,16 @@ export const routes = [
         element: <CapturePage></CapturePage>
     },
     {
-        path:  pagesNames.veredictPage,
+        path: pagesNames.veredictPage,
         element: <VeredictPage></VeredictPage>
     },
     {
         path: pagesNames.winnerPage,
         element: <WinnerPage></WinnerPage>
+    },
+    {
+        path: pagesNames.testimoniesPage,
+        element: <TestimoniesPage></TestimoniesPage>
     }
 
 ]

@@ -63,7 +63,7 @@ export const GamePage = () => {
 
                     <div id="gamePageNavigationButtons">
                         <div id="gamePageNavigationButtonsSuperior">
-                            <button id="gamePageWitnessesButton" onClick={() => { navigationHook.goToWitnessesPage() }}>
+                            <button id="gamePageWitnessesButton" onClick={navigationHook.goToTestimoniesPage}>
                                 Testigos
                             </button>
 

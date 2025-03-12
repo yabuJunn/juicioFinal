@@ -15,6 +15,7 @@ export const NavigationHook = () => {
     const goToCapturePage = () => { navigate(pagesNames.capturePage) }
     const goToVeredictPage = () => { navigate(pagesNames.veredictPage) }
     const goToWinnerPage = () => { navigate(pagesNames.winnerPage) }
+
     const goToEvidencePage = () => { navigate(pagesNames.evidencePage) }
     const goToTestimoniesPage = () => { navigate(pagesNames.testimoniesPage) }
 

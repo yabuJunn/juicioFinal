@@ -1,4 +1,11 @@
-body, h1, h2, h3, h4, h5, h6, p {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
   padding: 0;
 }
@@ -11,5 +18,13 @@ body, h1, h2, h3, h4, h5, h6, p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .backIconOrange {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 2.13rem;
+    height: 2.13;
   }
 }
