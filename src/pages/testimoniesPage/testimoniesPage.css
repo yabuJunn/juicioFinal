@@ -109,4 +109,57 @@
         background-color: #FE4F18;
         color: #FFF;
     }
+
+    /* Modal Preguntas */
+
+    #testimoniesPageModalQuestions {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.52);
+        z-index: 4;
+    }
+
+    #testimoniesPageModalQuestionsContent {
+        width: 80%;
+        height: 90vh;
+        background-color: #FFF;
+        border-radius: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        overflow-y: scroll;
+    }
+
+    #testimoniesPageModalQuestionsContent #closeIconDark {
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        top: 4rem;
+        right: 4rem;
+    }
+
+    /* Preguntas Items */
+
+    .testimoniesPageModalQuestionItem {
+        width: 80%;
+    }
+
+    .testimoniesPageModalQuestionItem h2 {
+        color: #2C2C2C;
+        font-family: Montserrat;
+        font-size: 1.4rem;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 100%;
+        text-align: center;
+
+        margin-top: 2rem;
+    }
 }

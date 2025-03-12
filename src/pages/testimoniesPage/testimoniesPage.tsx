@@ -3,6 +3,7 @@ import "./testimoniesPage.css"
 import backIconOrange from "../../assets/svg/arrow_back_orange.svg"
 import leftArrow from "../../assets/svg/arrow_left_icon_dark.svg"
 import rightArrow from "../../assets/svg/arrow_right_icon_dark.svg"
+import closeIconDark from "../../assets/svg/closeIconDark.svg"
 
 import testimonieImagePrueba from "../../assets/png/camilaCharacter.png"
 import { NavigationHook } from "../../hooks/navigationHook"
@@ -12,6 +13,16 @@ export const TestimoniesPage = () => {
 
     return <>
         <section className="page" id="testimoniesPage">
+
+            <div id="testimoniesPageModalQuestions">
+                <div id="testimoniesPageModalQuestionsContent">
+                    <img src={closeIconDark} alt="" id="closeIconDark" />
+
+                    <div className="testimoniesPageModalQuestionItem">
+                        <h2><strong>Pregunta 1:</strong> Restos de Pintura en la Ropa del Acusado</h2>
+                    </div>
+                </div>
+            </div>
 
             <div id="testimoniesPageContent">
 

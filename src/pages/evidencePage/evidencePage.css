@@ -211,6 +211,8 @@
         position: absolute;
         top: 23.5rem;
         right: 4rem;
+        width: 1rem;
+        height: 1rem;
     }
 
     #modalEvidencePurchaseContent p {
