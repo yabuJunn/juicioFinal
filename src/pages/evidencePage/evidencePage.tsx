@@ -19,7 +19,7 @@ export const EvidencePage = () => {
 
             <img src={backIconOrange} alt="" className="backIconOrange" onClick={navigationHook.goToGamePage} />
 
-            <div id="modalEvidenceDescriptionContainer">
+            {/* <div id="modalEvidenceDescriptionContainer">
                 <div id="modalEvidenceDescriptionContent">
                     <img src={closeIconDark} alt="CloseIconDark" id="closeIcon" />
 
@@ -31,7 +31,19 @@ export const EvidencePage = () => {
 
                     <button>Presentar Prueba</button>
                 </div>
-            </div>
+            </div> */}
+
+            {/* <div id="modalEvidencePurchase">
+                <div id="modalEvidencePurchaseContent">
+                    <img src={closeIconDark} alt="CloseIconDark" id="closeIcon" />
+
+                    <p>¿Deseas desbloquear esta prueba por 3 puntos?</p>
+
+                    <button>
+                        Confirmar
+                    </button>
+                </div>
+            </div> */}
 
             <div id="evidencePageContent">
                 <h1>Evidencias</h1>
