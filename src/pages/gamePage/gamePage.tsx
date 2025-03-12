@@ -21,11 +21,13 @@ export const GamePage = () => {
         groupA: 0,
         groupB: 0
     })
-    const [givedPoints, setGivedPoints] = useState<number>(0) // 0: No los ha dado, 1: Ya los dio
+    const [givedPoints, setGivedPoints] = useState<number>(1) // 0: No los ha dado, 1: Ya los dio
 
     if (turnNumber > 5) {
         navigationHook.goToVeredictPage()
     }
+
+    console.log(givedPoints)
 
     return (
         <section className="page" id="gamePage">
@@ -48,7 +50,8 @@ export const GamePage = () => {
                             onClick={() => {
                                 if (groupTurn === 0) {
                                     setGroupTurn(1);
-                                } else if (groupTurn === 1) {
+                                    setGivedPoints(0)
+                                } else if (groupTurn === 1 && givedPoints === 1) {
                                     setTurnNumber((prev) => prev + 1);
                                     setGroupButtonSelected(0);
                                     setGroupTurn(0);
@@ -92,31 +95,33 @@ export const GamePage = () => {
                         </div>
 
                         {/* DAR PUNTOS */}
-                        <button id="givePointsButton" onClick={() => {
-                            if (givedPoints === 0) {
-                                if (groupTurn === 1) {
-                                    if (groupButtonSelected === 1) {
-                                        setPoints(prev => {
-                                            return {
+                        <button
+                            id="givePointsButton"
+                            style={givedPoints === 1 ? { backgroundColor: "gray", color: "#FFFFF" } : {}}
+                            onClick={() => {
+                                if (givedPoints === 0) {
+                                    if (groupTurn === 1) {
+                                        if (groupButtonSelected === 1) {
+                                            setPoints(prev => ({
                                                 groupA: prev.groupA + 5,
                                                 groupB: prev.groupB
-                                            }
-                                        })
-                                    }
-
-                                    if (groupButtonSelected === 2) {
-                                        setPoints(prev => {
-                                            return {
+                                            }));
+                                        }
+                                        if (groupButtonSelected === 2) {
+                                            setPoints(prev => ({
                                                 groupA: prev.groupA,
                                                 groupB: prev.groupB + 5
-                                            }
-                                        })
+                                            }));
+                                        }
                                     }
+                                    setGivedPoints(1);
                                 }
-                            }
-                        }}>
+                            }}
+                        >
                             Dar puntos
                         </button>
+
+
                     </div>
 
                     {/* BOTONES DE NAVEGACIÓN */}

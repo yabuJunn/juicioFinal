@@ -234,6 +234,13 @@
         line-height: normal;
     }
 
+    #givePointsButton .disabled {
+        background-color: gray;
+        color: #17191C;
+        cursor: not-allowed;
+    }
+
+
     /* Botones de Navegacion */
 
     #gamePageNavigationButtons {
