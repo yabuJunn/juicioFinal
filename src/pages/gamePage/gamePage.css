@@ -180,6 +180,11 @@
         margin: 0.35rem;
     }
 
+    #turnIndicatorGroups .selected {
+        background: #2C2C2C;
+        color: #FFFFFF;
+    }
+
     #turnIndicatorNumber {
         display: flex;
         flex-direction: column;
