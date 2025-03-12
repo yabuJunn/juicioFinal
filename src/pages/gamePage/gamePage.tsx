@@ -1,5 +1,6 @@
-import { useState } from "react";
 import "./gamePage.css";
+
+import { useState } from "react";
 import { NavigationHook } from "../../hooks/navigationHook";
 
 import gamePageBackground from "../../assets/jpg/fondo_gamePage.jpg";
@@ -12,9 +13,9 @@ interface pointsInterface {
 export const GamePage = () => {
     const navigationHook = NavigationHook();
 
-    const caseName = "El Ministerio de la mansión centenaria";
+    const caseName = "El Misterio de la mansión centenaria";
 
-    const [turnNumber, setTurnNumber] = useState<number>(0);
+    const [turnNumber, setTurnNumber] = useState<number>(1);
     const [groupTurn, setGroupTurn] = useState<number>(0); // 0: Grupo A, 1: Grupo B
     const [groupButtonSelected, setGroupButtonSelected] = useState<number>(0); // 0: ninguno, 1: A, 2: B
     const [points, setPoints] = useState<pointsInterface>({
@@ -27,7 +28,8 @@ export const GamePage = () => {
         navigationHook.goToVeredictPage()
     }
 
-    console.log(givedPoints)
+    // Se muestra la sección "Comprar Juez" solo si alguno de los grupos tiene 20 o más puntos
+    const showJudgeSection = points.groupA >= 20 || points.groupB >= 20;
 
     return (
         <section className="page" id="gamePage">
@@ -41,10 +43,16 @@ export const GamePage = () => {
                 {/* CONTENEDOR TURNO */}
                 <div id="gamePageNextTurnContainer">
                     <div id="gamePageNextTurnContent">
-                        <p>Un grupo ha llegado a los <strong>20 puntos</strong></p>
-                        <button id="gamePageBuyJudgeButton" onClick={() => { }}>
-                            Comprar Juez
-                        </button>
+                        {/* Se envuelve el párrafo y botón en un div al que se le asigna la visibilidad condicional */}
+                        <div
+                            className="judge-section"
+                            style={{ visibility: showJudgeSection ? "visible" : "hidden" }}
+                        >
+                            <p>Un grupo ha llegado a los <strong>20 puntos</strong></p>
+                            <button id="gamePageBuyJudgeButton" onClick={() => { }}>
+                                Comprar Juez
+                            </button>
+                        </div>
                         <button
                             id="gamePageNextTurnButton"
                             onClick={() => {
@@ -106,15 +114,19 @@ export const GamePage = () => {
                                                 groupA: prev.groupA + 5,
                                                 groupB: prev.groupB
                                             }));
+                                            setGivedPoints(1);
+                                            setGroupButtonSelected(0)
                                         }
                                         if (groupButtonSelected === 2) {
                                             setPoints(prev => ({
                                                 groupA: prev.groupA,
                                                 groupB: prev.groupB + 5
                                             }));
+                                            setGivedPoints(1);
+                                            setGroupButtonSelected(0)
                                         }
                                     }
-                                    setGivedPoints(1);
+
                                 }
                             }}
                         >
