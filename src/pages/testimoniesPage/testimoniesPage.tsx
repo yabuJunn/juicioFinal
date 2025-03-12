@@ -5,15 +5,17 @@ import leftArrow from "../../assets/svg/arrow_left_icon_dark.svg"
 import rightArrow from "../../assets/svg/arrow_right_icon_dark.svg"
 
 import testimonieImagePrueba from "../../assets/png/camilaCharacter.png"
+import { NavigationHook } from "../../hooks/navigationHook"
 
 export const TestimoniesPage = () => {
+    const navigationHook = NavigationHook()
 
     return <>
         <section className="page" id="testimoniesPage">
 
             <div id="testimoniesPageContent">
 
-                <img src={backIconOrange} alt="" className="backIconOrange" />
+                <img src={backIconOrange} alt="" className="backIconOrange" onClick={navigationHook.goToGamePage} />
 
                 <h1>Testigos</h1>
 
@@ -36,9 +38,9 @@ export const TestimoniesPage = () => {
 
 
                 <div id="subjectControlButtons">
-                    <button>Pregunta</button>
+                    <button>Pregunta</button>{/*Modal*/}
 
-                    <button>Pruebas</button>
+                    <button>Pruebas</button> {/*Modal*/}
                 </div>
 
             </div>

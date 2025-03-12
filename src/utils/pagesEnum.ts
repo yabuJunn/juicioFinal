@@ -12,5 +12,6 @@ export enum pagesNames {
     winnerPage = '/WinnerPage',
     evidencePage = '/EvidencePage',
     testimoniesPage = '/TestimoniesPage',
+    
     endGamePage = '/EndGamePage',
 }

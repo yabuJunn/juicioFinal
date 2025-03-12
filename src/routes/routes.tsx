@@ -12,6 +12,7 @@ import { CapturePage } from "../pages/capturePage/capturePage";
 import { VeredictPage } from "../pages/veredictPage/veredictPage";
 import { WinnerPage } from "../pages/winnerPage/winnerPage";
 import { TestimoniesPage } from "../pages/testimoniesPage/testimoniesPage";
+import { EvidencePage } from "../pages/evidencePage/evidencePage";
 
 
 
@@ -63,6 +64,10 @@ export const routes = [
     {
         path: pagesNames.testimoniesPage,
         element: <TestimoniesPage></TestimoniesPage>
+    },
+    {
+        path: pagesNames.evidencePage,
+        element: <EvidencePage></EvidencePage>
     }
 
 ]

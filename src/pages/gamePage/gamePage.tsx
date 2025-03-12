@@ -28,7 +28,10 @@ export const GamePage = () => {
                             Comprar Juez
                         </button>
 
-                        <button id="gamePageNextTurnButton" onClick={() => { setTurnNumber(turnNumber + 1) }}>
+                        <button id="gamePageNextTurnButton" onClick={() => {
+                            setTurnNumber(turnNumber + 1)
+                            setGroupTurn(groupTurn + 1)
+                        }}>
                             Pasar turno
                         </button>
                     </div>
@@ -38,7 +41,7 @@ export const GamePage = () => {
 
                     <div id="turnIndicatorContainer">
                         <div id="turnIndicatorBackground">
-                            <p>Turno: 5</p>
+                            <p>Turno: {groupTurn}</p>
                         </div>
 
                         <div id="turnIndicatorGroups">
@@ -67,12 +70,12 @@ export const GamePage = () => {
                                 Testigos
                             </button>
 
-                            <button id="gamePageEvidencesButton" onClick={() => { navigationHook.goToEvidencePage() }}>
+                            <button id="gamePageEvidencesButton" onClick={navigationHook.goToEvidencePage}>
                                 Pruebas
                             </button>
                         </div>
 
-                        <button id="gamePageInterveneButton" onClick={() => { navigationHook.goToIntervenePage() }}>
+                        <button id="gamePageInterveneButton" onClick={navigationHook.gotToIntervenePage}>
                             Intervenir
                         </button>
                     </div>
