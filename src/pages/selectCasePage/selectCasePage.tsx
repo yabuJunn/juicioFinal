@@ -1,23 +1,11 @@
 import "./selectCasePage.css"
 
 import { NavigationHook } from "../../hooks/navigationHook"
-import { useDisableScroll } from "../../hooks/disableScroll";
-import { useEffect } from "react";
 
 import case1Image from "../../assets/jpg/case1_image.jpg"
 
 export const SelectCasePage = () => {
     const navigationHook = NavigationHook();
-
-    const { disableScroll, enableScroll } = useDisableScroll();
-
-    useEffect(() => {
-        disableScroll();
-
-        return () => {
-            enableScroll();
-        };
-    }, []);
 
 
     return <>

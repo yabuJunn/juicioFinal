@@ -1,24 +1,12 @@
 import "./introPage.css"
 
-import { useDisableScroll } from "../../hooks/disableScroll";
-import { useEffect } from "react";
 import { NavigationHook } from "../../hooks/navigationHook";
 
 import backgroundIntroPageImage from "../../assets/jpg/fondo_introPage.jpg"
 import introPageTitle from "../../assets/svg/titulo_landing.svg"
 
 export const IntroPage = () => {
-    const { disableScroll, enableScroll } = useDisableScroll();
     const navigationHook = NavigationHook();
-
-    useEffect(() => {
-        disableScroll();
-
-        return () => {
-            enableScroll();
-        };
-    }, [disableScroll, enableScroll]);
-
 
     return <>
         <section className="page" id="introPage">
