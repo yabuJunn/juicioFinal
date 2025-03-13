@@ -1,12 +1,24 @@
 import "./selectCasePage.css"
 
-import case1Image from "../../assets/jpg/case1_image.jpg"
-import leftArrow from "../../assets/svg/arrow_left_icon.svg"
-import rightArrow from "../../assets/svg/arrow_right_icon.svg"
 import { NavigationHook } from "../../hooks/navigationHook"
+import { useDisableScroll } from "../../hooks/disableScroll";
+import { useEffect } from "react";
+
+import case1Image from "../../assets/jpg/case1_image.jpg"
 
 export const SelectCasePage = () => {
     const navigationHook = NavigationHook();
+
+    const { disableScroll, enableScroll } = useDisableScroll();
+
+    useEffect(() => {
+        disableScroll();
+
+        return () => {
+            enableScroll();
+        };
+    }, []);
+
 
     return <>
         <section className="page" id="selectCasePage">
@@ -25,12 +37,6 @@ export const SelectCasePage = () => {
                     <h3>El misterio de la mansion centenaria</h3>
                     <div className="caseImageContainer">
                         <img src={case1Image} alt={case1Image} />
-                    </div>
-
-                    <div id="casesArrowsContainer">
-                        <img src={leftArrow} alt="" />
-
-                        <img src={rightArrow} alt="" />
                     </div>
                 </div>
 

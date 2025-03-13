@@ -10,6 +10,12 @@ p {
   padding: 0;
 }
 
+@font-face {
+  font-family: "Verve";
+  src: url("./assets/fonts/verve/Verve.ttf")
+}
+
+
 @media only screen and (max-width: 640px) {
   .page {
     width: 100%;

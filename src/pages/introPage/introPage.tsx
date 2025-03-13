@@ -1,12 +1,11 @@
 import "./introPage.css"
 
-import backgroundIntroPageImage from "../../assets/jpg/fondoIntroPage.jpg"
 import { useDisableScroll } from "../../hooks/disableScroll";
 import { useEffect } from "react";
-
-import introPageTitle from "../../assets/svg/titulo_landing.svg"
-import introPageCharacter from "../../assets/png/personaje_introPage.png"
 import { NavigationHook } from "../../hooks/navigationHook";
+
+import backgroundIntroPageImage from "../../assets/jpg/fondo_introPage.jpg"
+import introPageTitle from "../../assets/svg/titulo_landing.svg"
 
 export const IntroPage = () => {
     const { disableScroll, enableScroll } = useDisableScroll();
@@ -27,14 +26,6 @@ export const IntroPage = () => {
                 <img src={backgroundIntroPageImage} alt="" />
             </div>
 
-            <div id="fondoOpacoIntroPage">
-
-            </div>
-
-            <div id="introPageCharacter">
-                <img src={introPageCharacter} alt="" />
-            </div>
-
             <div id="introPageMargins">
                 <div id="introPageTitle">
                     <img src={introPageTitle} alt="" />
@@ -46,8 +37,7 @@ export const IntroPage = () => {
 
                 <div id="introPageTextDialogue2Container">
                     <div id="introPageTextDialogue2">
-                        <p>Bienvenido al <strong>Juicio Final</strong>, donde cada prueba y testimonio puede cambiar el destino.<br /><br />
-                            <b>Escoge tu caso y defiende tu postura… ¡el veredicto está en tus manos!</b></p>
+                        <p>Bienvenido al <strong>Juicio Final</strong>, donde cada prueba y testimonio puede cambiar el destino.</p>
                     </div>
                 </div>
 
